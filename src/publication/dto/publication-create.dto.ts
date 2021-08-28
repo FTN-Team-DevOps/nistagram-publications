@@ -1,7 +1,7 @@
 import { TPublicationType } from '../publication.model';
 
 export class PublicationCreateDTO {
-  descritpion: string;
+  description: string;
   pictures: string[];
   publicationType: TPublicationType;
   user: string;

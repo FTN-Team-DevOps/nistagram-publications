@@ -11,7 +11,7 @@ export class Publication {
   @Prop()
   user: string;
   @Prop()
-  descritpion: string;
+  description: string;
   @Prop()
   pictures: string[];
   @Prop()
