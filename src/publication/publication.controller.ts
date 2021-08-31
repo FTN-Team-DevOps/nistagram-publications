@@ -1,4 +1,4 @@
-import { Controller, Logger } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { PublicationCreateDTO } from './dto/publication-create.dto';
 import { PublicationSearchDTO } from './dto/publication-search.dto';
@@ -14,13 +14,11 @@ export class PublicationController {
   async search(
     @Payload() payload: PublicationSearchDTO,
   ): Promise<Publication[]> {
-    Logger.log(`THis is payload ${JSON.stringify(payload)}`);
     return await this.publicationService.findAll(payload);
   }
 
   @MessagePattern('publications-create')
   async create(@Payload() payload: PublicationCreateDTO): Promise<Publication> {
-    Logger.log(`THis is payload ${JSON.stringify(payload)}`);
     return await this.publicationService.create(payload);
   }
 
